@@ -11,6 +11,19 @@ define(function() {
       //
       // otherwise the function should return the number, or false if no number
       // was provided or the value provided is not a number
+      if(typeof num === 'number'){
+        if(!(num % 3) && !(num % 5)){
+          return 'fizzbuzz';
+        }
+        else if(!(num % 3)){
+          return 'fizz';
+        }
+        else if(!(num % 5)){
+          return 'buzz';
+        }
+        return num;
+      }
+      return false;
     }
   };
 });

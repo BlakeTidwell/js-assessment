@@ -11,11 +11,18 @@ module.exports = function(opts) {
     baseDir :   './'
   }, opts || {});
 
+  var liveReloadPort = 35729;
+  var excludeList = ['.woff', '.flv'];
+
   site.configure(function() {
     [ 'app', 'lib', 'tests', 'data', 'answers' ].forEach(function(dir) {
       site.use('/' + dir, staticDir(opts.baseDir + dir));
     });
     site.use(express.bodyParser());
+    site.use(require('connect-livereload')({
+      port: liveReloadPort,
+      excludeList: excludeList
+    }));
   });
 
   site.get("/", function(req, res) {
