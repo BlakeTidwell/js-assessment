@@ -38,6 +38,14 @@ define(function() {
       return arr;
     },
 
+    prepend : function(arr, item) {
+
+    },
+
+    curtail : function(arr) {
+
+    },
+
     concat : function(arr1, arr2) {
       return arr1.concat(arr2);
     },
