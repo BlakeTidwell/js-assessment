@@ -39,11 +39,13 @@ define(function() {
     },
 
     prepend : function(arr, item) {
-
+      arr.unshift(item);
+      return arr;
     },
 
     curtail : function(arr) {
-
+      arr.shift();
+      return arr;
     },
 
     concat : function(arr1, arr2) {
@@ -68,7 +70,7 @@ define(function() {
         var head;
         head = arr.splice(0, 1);
         while(arr.length){
-          if(head.indexOf(arr[0]) > -1){
+          if(head.indexOf(arr[0]) > -1 && dups.indexOf(arr[0]) < 0){
             dups.push(arr[0]);
           }
           head.push(arr.splice(0, 1)[0]);
