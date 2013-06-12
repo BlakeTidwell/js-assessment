@@ -42,7 +42,11 @@ define(function() {
     },
 
     permute: function(arr) {
+      function makePermutations(currSubset, original){
+        return [];
+      }
 
+      return makePermutations([], arr);
     }
   };
 });
